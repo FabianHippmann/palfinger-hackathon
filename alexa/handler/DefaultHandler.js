@@ -5,8 +5,9 @@ const APP_STATES = config.APP_STATES
 
 const handler = {
     'LaunchRequest': function () {
-        this.handler.state = APP_STATES.START;
-        this.emitWithState("NewSession", true);
+        this.emit(':tell', "Auf Wiedersehen!");
+        // this.handler.state = APP_STATES.START;
+        // this.emitWithState("NewSession", true);
     },
     'PalErrorcodeIntent': function () {
         this.handler.state = APP_STATES.ERROR;

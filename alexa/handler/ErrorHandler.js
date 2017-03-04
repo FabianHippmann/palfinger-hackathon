@@ -28,13 +28,15 @@ const handler = Alexa.CreateStateHandler(APP_STATES.ERROR, {
 
             let output = body.cause + " " + body.solution;
 
+            console.log(output);
             // We have a Request to ask Palfinger, we ask if we should create a support Ticket.
-            if(output.indexOf("nachfragen"))
+            if(output.indexOf("benachrichtigen") != -1)
             {
                 // save the status for service handler
                 Object.assign(this.attributes, {
                     "errorcode": errorcode,
-                    "errormessage": output
+                    "cause": body.cause,
+                    "solution": body.solution,
                 });
 
                 output = output + " Sollen wir ein Serviceticket anlegen?";
@@ -49,15 +51,15 @@ const handler = Alexa.CreateStateHandler(APP_STATES.ERROR, {
             }
         });
     },
-    "AMAZON.YesIntent": function() {
+    'AMAZON.YesIntent': function() {
         this.handler.state = APP_STATES.SERVICE;
         this.emitWithState("ServiceRequest", true);
     },
-    "AMAZON.NoIntent": function() {
+    'AMAZON.NoIntent': function() {
         this.handler.state = APP_STATES.START;
         this.emitWithState("NewSession", true);
     },
-    "Unhandled": function () {
+    'Unhandled': function () {
         const speechOutput = "Das hab ich nicht verstanden, bitte nochmal!";
         this.emit(":ask", speechOutput, speechOutput);
     }

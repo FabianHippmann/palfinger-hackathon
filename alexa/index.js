@@ -24,6 +24,6 @@ const ServiceHandler = require('./handler/ServiceHandler');
 exports.handler = (event, context) => {
     const alexa = Alexa.handler(event, context);
     alexa.APP_ID = config.APP_ID;
-    alexa.registerHandler(DefaultHandler, StartHandler, ErrorHandler, ServiceHandler);
+    alexa.registerHandlers(DefaultHandler, StartHandler, ErrorHandler, ServiceHandler);
     alexa.execute();
 };
