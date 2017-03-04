@@ -16,10 +16,8 @@ class CreateJourneysTable extends Migration
         Schema::create('journeys', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name'); 
-            
-            $table->integer('delivery_note_id')->unsigned(); 
-            $table->foreign('delivery_note_id')->references('id')->on('delivery_notes');
-            
+            $table->integer('operator_id')->unsigned(); 
+            $table->foreign('operator_id')->references('id')->on('operators'); 
             $table->timestamp('ended_at'); 
             $table->timestamps();
         });

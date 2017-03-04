@@ -20,6 +20,8 @@ class CreateDeliveryNotesTable extends Migration
             $table->decimal('lat', 10, 7);
             $table->timestamp('from_date')->nullable();
             $table->timestamp('to_date')->nullable();
+            $table->integer('journey_id')->unsigned(); 
+            $table->foreign('journey_id')->references('id')->on('journeys'); 
             $table->text('additional_information');
             $table->timestamps();
         });

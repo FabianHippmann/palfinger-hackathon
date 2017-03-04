@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class DeliveryNote extends Model
 {
     protected $casts = [
-    	'additional_info' => 'array'
+    	'additional_information' => 'array'
     ];
+     public function journey()
+    {
+        return $this->belongsTo('App\Journey');
+    }
 }

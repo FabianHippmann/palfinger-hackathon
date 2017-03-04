@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\SupportTicket;
 use Illuminate\Http\Request;
-use SupportTicket; 
+use Auth; 
 class SupportTicketController extends Controller
 {
     /**
@@ -24,9 +24,12 @@ class SupportTicketController extends Controller
      */
     public function create(Request $request)
     {   
-        $supportTicket = SupportTicket::create($request->fill()); 
+        Auth::loginUsingId(1); 
+        $formData = $request->except('user_id'); 
+        $formData['user_id'] = Auth::user()->id; 
 
-        
+        $supportTicket = SupportTicket::create($formData);
+        return $supportTicket;  
     }
 
     /**

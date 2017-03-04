@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\DeliveryNote;
-use Illuminate\Http\Request;
-use Auth; 
+use Auth;
+
 class DeliveryNoteController extends Controller
 {
-    public function latest(){
-    	Auth::loginUsingId(1);
-    	dd(Auth::user()->currentOperator());  
-        return Auth::user()->operators()->latest()->journey->delivery_note; 
+    public function latest()
+    {
+        Auth::loginUsingId(1);
+
+        return Auth::user()->currentOperator();
+
     }
 }

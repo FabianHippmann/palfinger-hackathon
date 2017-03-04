@@ -27,7 +27,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     public function currentOperator(){
-        return $this->operators()->latest()->first()->journey();
+        return $this->operators()->first()->journeys()->first()->deliveryNote;
     }
     public function operators(){
         return $this->hasMany('App\Operator');

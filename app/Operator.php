@@ -12,4 +12,7 @@ class Operator extends Model
     {
         return $this->belongsTo('App\User');
     }
+  	public function journeys(){
+  		return $this->hasMany('App\Journey'); 
+  	}
 }
