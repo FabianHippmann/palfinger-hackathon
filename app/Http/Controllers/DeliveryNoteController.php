@@ -9,7 +9,7 @@ class DeliveryNoteController extends Controller
 {
     public function latest(){
     	Auth::loginUsingId(1);
-    	dd(Auth::user()->operators());  
+    	dd(Auth::user()->currentOperator());  
         return Auth::user()->operators()->latest()->journey->delivery_note; 
     }
 }

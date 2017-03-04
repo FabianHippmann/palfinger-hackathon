@@ -26,7 +26,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function currentOperator(){
 
+        return $this->operators()->latest()->first()->journey()
+    }
     public function operators(){
         return $this->hasMany('App\Operator');
     }
