@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();	
+    return $request->user();
 });
 
 
@@ -25,7 +25,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('errorcode/{errorcode}', 'ErrorCodeController@getErrorCode'); 
 
-Route::get('findnearby', 'ServiceLocations@getNearby');
+Route::get('findnearby', 'ServiceLocationsController@getNearby');
 
 Route::post('supportticket', 'SupportTicketController@create');
 
