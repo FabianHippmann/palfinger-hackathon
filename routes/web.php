@@ -11,6 +11,14 @@
 |
 */
 
+use App\Log;
+use App\SupportTicket; 
+use App\Journey; 
+use App\DeliveryNote; 
 Route::get('/', function () {
-    return view('welcome');
+    $logs = Log::all(); 
+    $supportTickets = SupportTicket::all(); 
+    $journey = Journey::first(); 
+    
+    return view('welcome',compact('logs','support', 'journey')); 
 });
