@@ -13,6 +13,23 @@ use Illuminate\Http\Request;
 |
 */
 
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+
+
+Route::get('errorcode/{errorcode}', 'ErrorCodeController@getErrorCode'); 
+
+Route::get('findnearby', 'ServiceLocations@getNearby');
+
+Route::post('supportticket', 'SupportTicketController@create');
+
+Route::get('deliverynote', 'DeliveryNoteController@latest');
+
+
+
+
