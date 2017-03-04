@@ -21,6 +21,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 
+Route::get('faqs', function(){
+        $file = file_get_contents('https://www.palfinger.com/faq_handler.ashx?action=getFaqs&faq=FAF4C70861824AA9BD247DA41346A3FA&language=de');
+        return json_decode($file, true);  
+}); 
 
 
 Route::get('errorcode/{errorcode}', 'ErrorCodeController@getErrorCode'); 

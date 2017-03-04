@@ -38,7 +38,7 @@ class ImportErrorCodes extends Command
      */
     public function handle()
     {
-        $file = Storage::get('data/errorcodes.json');
+        $file = Storage::get('public/errorcodes.json');
 
         $statusCodes = collect(json_decode($file, true));
         if (json_last_error() != JSON_ERROR_NONE) {
