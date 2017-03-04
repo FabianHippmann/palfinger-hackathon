@@ -17,7 +17,8 @@ class CreateOperatorsTable extends Migration
             $table->increments('id');
             $table->integer('vehicle_id')->unsigned(); 
             $table->foreign('vehicle_id')->references('id')->on('vehicles'); 
-            
+            $table->integer('user_id')->unsigned(); 
+            $table->foreign('user_id')->references('id')->on('users'); 
             $table->string('name');
             $table->timestamps();
         });

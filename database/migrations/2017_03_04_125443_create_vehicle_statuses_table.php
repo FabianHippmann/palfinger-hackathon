@@ -17,10 +17,10 @@ class CreateVehicleStatusesTable extends Migration
             $table->increments('id');
             
             $table->integer('vehicle_id')->unsigned();
-            $table->foreign('vehicle_id')->references('id')->on('vehicle');
+            $table->foreign('vehicle_id')->references('id')->on('vehicles');
             
             $table->integer('status_id')->unsigned();
-            $table->foreign('status_id')->references('id')->on('status');
+            $table->foreign('status_id')->references('id')->on('statuses');
 
 
 

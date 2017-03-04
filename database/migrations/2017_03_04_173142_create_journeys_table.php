@@ -17,9 +17,9 @@ class CreateJourneysTable extends Migration
             $table->increments('id');
             $table->string('name'); 
             
-            $table->integer('deliver_note_id')->unsigned(); 
+            $table->integer('delivery_note_id')->unsigned(); 
             $table->foreign('delivery_note_id')->references('id')->on('delivery_notes');
-
+            
             $table->timestamp('ended_at'); 
             $table->timestamps();
         });

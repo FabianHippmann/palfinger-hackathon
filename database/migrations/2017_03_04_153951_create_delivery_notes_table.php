@@ -16,11 +16,11 @@ class CreateDeliveryNotesTable extends Migration
         Schema::create('delivery_notes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->decimal('long', 7, 10);
-            $table->decimal('lat', 7, 10);
-            $table->timestamp('from_date'); 
-            $table->timestamp('to_date');
-            $table->text('additional_information');  
+            $table->decimal('long', 10, 7);
+            $table->decimal('lat', 10, 7);
+            $table->timestamp('from_date')->nullable();
+            $table->timestamp('to_date')->nullable();
+            $table->text('additional_information');
             $table->timestamps();
         });
     }
