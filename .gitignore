@@ -7,3 +7,5 @@
 Homestead.json
 Homestead.yaml
 .env
+/alexa/pack.zip
+/alexa/node_modules
