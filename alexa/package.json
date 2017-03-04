@@ -1,0 +1,24 @@
+{
+  "name": "palfinger-pal",
+  "version": "1.0.0",
+  "description": "The Alexa Skill for the Palfinger Ecosystem",
+  "main": "index.js",
+  "dependencies": {
+    "alexa-sdk": "^1.0.7",
+    "request": "^2.80.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FabianHippmann/palfinger-hackathon.git"
+  },
+  "author": "Florian Bauer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FabianHippmann/palfinger-hackathon/issues"
+  },
+  "homepage": "https://github.com/FabianHippmann/palfinger-hackathon#readme"
+}

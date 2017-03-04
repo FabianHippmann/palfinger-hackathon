@@ -1,0 +1,17 @@
+PalErrorcodeIntent Fehlercode {ErrorcodeFirst} punkt {ErrorcodeSecond}
+PalErrorcodeIntent was bedeutet Fehlercode {ErrorcodeFirst} punkt {ErrorcodeSecond}
+PalErrorcodeIntent Fehler {ErrorcodeFirst} punkt {ErrorcodeSecond}
+PalErrorcodeIntent was bedeutet Fehler {ErrorcodeFirst} punkt {ErrorcodeSecond}
+PalErrorcodeIntent Fehlermeldung {ErrorcodeFirst} punkt {ErrorcodeSecond}
+PalErrorcodeIntent was bedeutet Fehlermeldung {ErrorcodeFirst} punkt {ErrorcodeSecond}
+PalErrorcodeIntent was ist {ErrorcodeFirst} punkt {ErrorcodeSecond}
+PalErrorcodeIntent was bedeutet {ErrorcodeFirst} punkt {ErrorcodeSecond}
+PalErrorcodeIntent Fehlercode {ErrorcodeFirst} {ErrorcodeSecond}
+PalErrorcodeIntent was bedeutet Fehlercode {ErrorcodeFirst} {ErrorcodeSecond}
+PalErrorcodeIntent Fehler {ErrorcodeFirst} {ErrorcodeSecond}
+PalErrorcodeIntent was bedeutet Fehler {ErrorcodeFirst} {ErrorcodeSecond}
+PalErrorcodeIntent Fehlermeldung {ErrorcodeFirst} {ErrorcodeSecond}
+PalErrorcodeIntent was bedeutet Fehlermeldung {ErrorcodeFirst} {ErrorcodeSecond}
+PalErrorcodeIntent was ist {ErrorcodeFirst} {ErrorcodeSecond}
+PalErrorcodeIntent was bedeutet {ErrorcodeFirst} {ErrorcodeSecond}
+
