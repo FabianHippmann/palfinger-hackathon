@@ -16,9 +16,13 @@ use App\SupportTicket;
 use App\Journey; 
 use App\DeliveryNote; 
 Route::get('/', function () {
+    
+    return view('welcome'); 
+});
+Route::get('/ajax/dashboard', function(){
     $logs = Log::all(); 
     $supportTickets = SupportTicket::all(); 
     $journey = Journey::first(); 
-    
-    return view('welcome',compact('logs','support', 'journey')); 
+
+	return view('dashboard',compact('logs','support', 'journey', 'supportTickets')); 
 });

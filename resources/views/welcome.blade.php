@@ -7,16 +7,16 @@
         <title>
             Palfinger Assistant 
         </title>
-
+            
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"/>
       {{--     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script> --}}
 
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <script>
-        setTimeout(function(){
+        // setTimeout(function(){
 
-        window.location.reload(); 
-        }, 300); 
+        // window.location.reload(); 
+        // }, 300); 
         </script>
         <style>
                 
@@ -98,7 +98,7 @@
                                     }
                                     .panel{
         
-                                        border-radius: 3px;
+                                        border-radius: 5px;
                                         min-height: 100px;
                                         width: 100px;
                                         margin: 7.5px;
@@ -166,55 +166,35 @@
 }
 textarea{
 }
+
+.notification {
+    background-color: #dc3619;
+    margin-left: -10px;
+    color: #fff;
+    margin-right: -10px;
+    padding: 13px;
+}
                                 </style>
     </head>
+
     <body>
         <div class="position-ref full-height">
             <header>
                 <img src="{{ asset('images/logo.png') }}"/>
             </header>
-            <div class="content flex-container">
-                <div class="bigitem panel">
-                    <h2 class="title">
-                        Konversation
-                    </h2>
-                    <div class="conversation">
-                        @foreach($logs as $log)
-                        <div class="bubble-container">
-                            <div class="question bubble">{{$log->question}}
-                            <div class="sent-date">{{$log->created_at->diffForHumans()}}</div></div>
-
-                        </div>
-                        <div class="bubble-container">
-                            <div class="answer bubble">{{$log->answer}}</div>
-                        </div>
-                        @endforeach
-                    {{--     <div class="bubble-container">
-                        <div class="input-field col s12">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Nachricht</label>
-        </div>
-
-                        </div> --}}
-                    </div>
-                </div>
-                <div class="smallitem panel">
-                {{--     <h2 class="title">
-                        System-log
-                    </h2> --}}
-                    <div class="syslog">
-                        <h3>Aktueller Auftrag</h3>
-                        <h4>Name</h4>
-                        <p>{{$journey->name}}</p>
-                        <h4>Fahrzeug</h4>
-                        <p>PK 16002</p>
-                        <h4>Fahrer</h4>
-                        <p>Martin Zehnder</p>
-                        <h4>Ziel</h4>
-                        <p>{{$journey->deliveryNote->additional_information['street']}}</p>
-                    </div>
-                </div>
+            <div id="container">
+                
             </div>
         </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+ <script>
+    // setInterval(function(){
+        $(document).ready(function(){
+            
+        $( "#container" ).load( "/ajax/dashboard" );
+        });
+    // }, 300);
+
+    </script>
     </body>
 </html>

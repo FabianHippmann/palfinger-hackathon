@@ -26,6 +26,7 @@ class SupportTicketController extends Controller
     {   
         Auth::loginUsingId(1); 
         $formData = $request->except('user_id'); 
+        
         $formData['user_id'] = Auth::user()->id; 
 
         $supportTicket = SupportTicket::create($formData);
