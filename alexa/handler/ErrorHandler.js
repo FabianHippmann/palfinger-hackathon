@@ -36,9 +36,11 @@ const handler = Alexa.CreateStateHandler(APP_STATES.ERROR, {
                 Object.assign(this.attributes, {
                     "errorcode": errorcode,
                     "cause": body.cause,
+                    "short": body.short_description,
                     "solution": body.solution,
                 });
 
+                output = output.replace('Palfinger benachrichtigen. ', '');
                 output = output + " Sollen wir ein Serviceticket anlegen?";
                 this.emit(':ask', output, output);
             } else {

@@ -8,7 +8,7 @@ const APP_STATES = config.APP_STATES
 const handler = Alexa.CreateStateHandler(APP_STATES.SERVICE, {
     'ServiceRequest': function (message) {
 
-        const output = `Ein Ticket wird für "${this.attributes.cause}" angelegt. Bitte mit "Ja" bestätigen oder weitere Informationen angeben.`;
+        const output = `Ein Ticket wird für "${this.attributes.short}" angelegt. Bitte mit "Ja" bestätigen oder weitere Informationen angeben.`;
         this.emit(':ask', output, output);
         
         // Set the current state to trivia mode. The skill will now use handler defined in triviaStateHandler
