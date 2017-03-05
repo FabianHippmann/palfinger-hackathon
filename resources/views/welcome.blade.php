@@ -1,93 +1,218 @@
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>
+            Palfinger Assistant 
+        </title>
 
-        <title>Laravel</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"/>
+      {{--     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script> --}}
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+        setTimeout(function(){
 
-        <!-- Styles -->
+        window.location.reload(); 
+        }, 300); 
+        </script>
         <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+                
+                                    html, body {
+                                        background-color: #eff2f2;
+                                        color: #636b6f;
+                                        font-family: 'Open Sans', sans-serif;
+                                        font-weight: 100;
 
-            .full-height {
-                height: 100vh;
-            }
+                                        height: 100vh;
+                                        margin: 0;
+                                    }
+                                    header{
+                                        padding: 20px 40px;
+                                        background: -moz-linear-gradient(0deg, rgba(192,4,24,1) 0%, rgba(228,67,25,1) 100%); /* ff3.6+ */
+                background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(192,4,24,1)), color-stop(100%, rgba(228,67,25,1))); /* safari4+,chrome */
+                background: -webkit-linear-gradient(0deg, rgba(192,4,24,1) 0%, rgba(228,67,25,1) 100%); /* safari5.1+,chrome10+ */
+                background: -o-linear-gradient(0deg, rgba(192,4,24,1) 0%, rgba(228,67,25,1) 100%); /* opera 11.10+ */
+                background: -ms-linear-gradient(0deg, rgba(192,4,24,1) 0%, rgba(228,67,25,1) 100%); /* ie10+ */
+                background: linear-gradient(90deg, rgba(192,4,24,1) 0%, rgba(228,67,25,1) 100%); /* w3c */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c00418', endColorstr='#e44319',GradientType=1 ); /* ie6-9 */
+            margin-bottom: 30px;
+                                    }
+                                    .full-height {
+                                        height: 100vh;
+                                    }
+                                    
+                                    .flex-container {
+                                        padding: 0 60px; 
+                                        width: 100%;
+                                        display: flex;
+                                    }
+                        
+                                    .position-ref {
+                                        position: relative;
+                                    }
+                        
+                                    .top-right {
+                                        position: absolute;
+                                        right: 10px;
+                                        top: 18px;
+                                    }
+                        
+                                    .content {
+                                        text-align: left;
+                                    }
+                                    h3{
+                                        margin: 0 -10px;
+    font-size: 16px;
+    margin: 0;
+    margin: 0 -10px;
+    font-weight: bold;
+    color: #333;
+    padding: 0 10px 4px 10px;
+    border-bottom: 1px solid #cecece;
+                                    }
+                                    h4{
+                                        color: #333;
+                                        margin: 0;
+                                        margin-top: 5px;
+                                        font-size: 14px;
+                                        font-weight: bold;
+                                    }
+                                    p{
+                                        margin: 0;
+                                    }
+                                    .syslog{
+                                        padding: 10px;
+                                    }
+                                    .title {
+                                            font-size: 20px;
+    font-size: 17px;
+    text-align: left;
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 10px;
+    margin: 0;
+                                    }
+                                    .panel{
+        
+                                        border-radius: 3px;
+                                        min-height: 100px;
+                                        width: 100px;
+                                        margin: 7.5px;
+                                        background-color: #fff;
+                                            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0,0,0,0.23);
+                                    }
+                                    .links > a {
+                                        color: #636b6f;
+                                        padding: 0 25px;
+                                        font-size: 12px;
+                                        font-weight: 600;
+                                        letter-spacing: .1rem;
+                                        text-decoration: none;
+                                        text-transform: uppercase;
+                                    }
+                        
+                                    .m-b-md {
+                                        margin-bottom: 30px;
+                                    }
+                                    .bigitem {
+           /* This will be twice as big as the small item. */
+           -webkit-flex: 2 0 0; 
+           flex: 2 0 0; 
+        }
+        .smallitem {
+           -webkit-flex: 1 0 0;
+           flex: 1 0 0;
+        }
+    .conversation{
+        padding: 10px;
+    }
+    
+        .bubble {
+    border-radius: 20px;
+    display: block;
+    margin-bottom: 8px;
+    padding: 7.5px 15px;
+        font-size: 16px;
+    font-weight: 400;
+        max-width: 72%;
+        text-align: left;
+        color: #000;
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+}
+.sent-date{
+        display: block;
+    text-align: right;
+    font-size: 12px;
+}
+.bubble.question{
 
-            .position-ref {
-                position: relative;
-            }
+    background-color: rgba(255, 228, 0, 0.26);
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
+}
+.bubble.answer{
+    float: right;
+    text-align: left;
+    min-width: 40%;
+    background-color: #eff2f2;
+}
+.bubble-container{
+    width: 100%;
+    float: left;
+    display: block;
+}
+textarea{
+}
+                                </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
+        <div class="position-ref full-height">
+            <header>
+                <img src="{{ asset('images/logo.png') }}"/>
+            </header>
+            <div class="content flex-container">
+                <div class="bigitem panel">
+                    <h2 class="title">
+                        Konversation
+                    </h2>
+                    <div class="conversation">
+                        @foreach($logs as $log)
+                        <div class="bubble-container">
+                            <div class="question bubble">{{$log->question}}
+                            <div class="sent-date">{{$log->created_at->diffForHumans()}}</div></div>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+                        </div>
+                        <div class="bubble-container">
+                            <div class="answer bubble">{{$log->answer}}</div>
+                        </div>
+                        @endforeach
+                    {{--     <div class="bubble-container">
+                        <div class="input-field col s12">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Nachricht</label>
+        </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                        </div> --}}
+                    </div>
+                </div>
+                <div class="smallitem panel">
+                {{--     <h2 class="title">
+                        System-log
+                    </h2> --}}
+                    <div class="syslog">
+                        <h3>Aktueller Auftrag</h3>
+                        <h4>Name</h4>
+                        <p>{{$journey->name}}</p>
+                        <h4>Fahrzeug</h4>
+                        <p>PK 16002</p>
+                        <h4>Fahrer</h4>
+                        <p>Martin Zehnder</p>
+                        <h4>Ziel</h4>
+                        <p>{{$journey->deliveryNote->additional_information['street']}}</p>
+                    </div>
                 </div>
             </div>
         </div>
