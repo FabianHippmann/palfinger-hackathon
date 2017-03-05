@@ -183,12 +183,12 @@ textarea{
         </div>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
  <script>
-    // setInterval(function(){
         $(document).ready(function(){
             
+    setInterval(function(){
         $( "#container" ).load( "/ajax/dashboard" );
+    }, 300);
         });
-    // }, 300);
 
     </script>
     </body>
