@@ -1,0 +1,41 @@
+{
+  "intents": [
+    {
+      "intent": "PalErrorcodeIntent",
+      "slots": [
+      {
+        "name" : "ErrorcodeFirst",
+        "type": "AMAZON.NUMBER"
+      },
+      {
+        "name" : "ErrorcodeSecond",
+        "type": "AMAZON.NUMBER"
+      }
+     ]
+    },
+    {
+      "intent": "NewServiceIntent"
+    },
+    {
+      "intent": "FaqFirstIntent"
+    },
+    {
+      "intent": "FaqSecondIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.YesIntent"
+    },
+    {
+      "intent": "AMAZON.NoIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}

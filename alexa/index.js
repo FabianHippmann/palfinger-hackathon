@@ -1,11 +1,8 @@
-/* eslint-disable  func-names */
-/* eslint quote-props: ["error", "consistent"]*/
 /**
- * This sample demonstrates a sample skill built with Amazon Alexa Skills nodejs
- * skill development kit.
- * This sample supports multiple languages (en-US, en-GB, de-GB).
+ * This Prototype demonstrates the usage of a VUI for the Palfinger Hackathon
+ * based on the Alexa skill development kit.
  * The Intent Schema, Custom Slot and Sample Utterances for this skill, as well
- * as testing instructions are located at https://github.com/alexa/skill-sample-nodejs-howto
+ * as the presentation for the Hackathon are located at https://github.com/FabianHippmann/palfinger-hackathon
  **/
 'use strict';
 
