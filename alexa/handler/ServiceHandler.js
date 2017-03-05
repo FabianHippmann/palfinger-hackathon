@@ -1,9 +1,11 @@
 "use strict"
 
 const Alexa = require('alexa-sdk');
+const request = require('request');
 
 const config = require('../config/config');
-const APP_STATES = config.APP_STATES
+const APP_STATES = config.APP_STATES;
+const BASE_URL = config.BASE_URL;
 
 const handler = Alexa.CreateStateHandler(APP_STATES.SERVICE, {
     'NewServiceRequest': function (message) {
@@ -20,8 +22,12 @@ const handler = Alexa.CreateStateHandler(APP_STATES.SERVICE, {
         this.emitWithState("PalErrorcodeIntent", true);
     },
     'AMAZON.YesIntent': function() {
-        this.emit(':tell', "Das Ticket wurde weitergegeben, wir haben Ihnen die Ticketnummer 123 für weitere Referenz an ihr Mobiltelefon gesendet.");
-        this.emit('SessionEndedRequest');
+        request.post({url:BASE_URL + "addconversation", form: {question:'Anfrage für Serviceticket.', answer: 'Ticket #123 erstellt'}}, (err,httpResponse,body) => {
+          request.post({url:BASE_URL + "supportticket", form: {message:'Ticket #123 erstellt.'}}, (err,httpResponse,body) => {
+            this.emit(':tell', "Das Ticket wurde weitergegeben, wir haben Ihnen die Ticketnummer 123 für weitere Referenz an ihr Mobiltelefon gesendet.");
+            this.emit('SessionEndedRequest');
+          });
+        });
     },
     'AMAZON.NoIntent': function() {
         this.emit(':tell', "Serviceticket wurde abgebrochen");

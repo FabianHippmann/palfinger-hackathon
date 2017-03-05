@@ -32,15 +32,20 @@ const handler = Alexa.CreateStateHandler(APP_STATES.ERROR, {
                     "solution": body.solution,
                 });
 
-                output = output.replace('Palfinger benachrichtigen. ', '');
-                output = output + " Sollen wir ein Serviceticket anlegen?";
-                this.emit(':ask', output, output);
+                request.post({url:BASE_URL + "addconversation", form: {question:'Anfrage Fehlercode 529.003', answer: output}}, (err,httpResponse,body) => {
+                  output = output.replace('Palfinger benachrichtigen. ', '');
+                  output = output + " Sollen wir ein Serviceticket anlegen?";
+                  this.emit(':ask', output, output);
+                });
             } else {
 
                 // change back to default State
                 this.handler.state = APP_STATES.START;
 
                 // Give back the Errorcode
+                request.post({url:BASE_URL + "addconversation", form: {question:'Anfrage Fehlercode 529.003', answer: output}}, (err,httpResponse,body) => {
+                  this.emit(':ask', output, output);
+                });
                 this.emit(':tell', output, output);
             }
         });
