@@ -12,12 +12,7 @@
       {{--     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script> --}}
 
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script>
-        // setTimeout(function(){
-
-        // window.location.reload(); 
-        // }, 300); 
-        </script>
+       
         <style>
                 
                                     html, body {
