@@ -14,4 +14,18 @@ PalErrorcodeIntent Fehlermeldung {ErrorcodeFirst} {ErrorcodeSecond}
 PalErrorcodeIntent was bedeutet Fehlermeldung {ErrorcodeFirst} {ErrorcodeSecond}
 PalErrorcodeIntent was ist {ErrorcodeFirst} {ErrorcodeSecond}
 PalErrorcodeIntent was bedeutet {ErrorcodeFirst} {ErrorcodeSecond}
-
+NewServiceIntent ich möchte ein Serviceticket anlegen
+NewServiceIntent Serviceticket anlegen
+NewServiceIntent Neues Serviceticket
+NewServiceIntent Serviceticket
+NewServiceIntent Serviceanfrage anlegen
+NewServiceIntent Neues Serviceanfrage
+NewServiceIntent Serviceanfrage
+NewServiceIntent Servicerequest anlegen
+NewServiceIntent Neues Servicerequest
+NewServiceIntent Servicerequest
+FaqFirstIntent Wie finde ich die Anzahl der verbauten Teile
+FaqFirstIntent Wieviele Teile sind verbaut
+FaqSecondIntent Wo bekomme ich technische Beratung
+FaqSecondIntent Ich brauche technische Beratung
+FaqSecondIntent technische Beratung

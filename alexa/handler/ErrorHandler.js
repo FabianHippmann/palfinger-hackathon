@@ -15,20 +15,12 @@ const handler = Alexa.CreateStateHandler(APP_STATES.ERROR, {
         const errorsecond = ("00" + this.event.request.intent.slots.ErrorcodeSecond.value).slice(-3);
         const errorcode =  errorfirst + "." + errorsecond;
 
-        console.log(errorcode);
-
         //send request to Main Gateway
         request(BASE_URL + "errorcode/" + errorcode, (error, response, body) => {
 
-            console.log('error:', error); // Print the error if one occurred 
-            console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received 
-            console.log(body); // Print the HTML for the Google homepage. 
-
             body = JSON.parse(body);
-
             let output = body.cause + " " + body.solution;
 
-            console.log(output);
             // We have a Request to ask Palfinger, we ask if we should create a support Ticket.
             if(output.indexOf("benachrichtigen") != -1)
             {
@@ -58,12 +50,25 @@ const handler = Alexa.CreateStateHandler(APP_STATES.ERROR, {
         this.emitWithState("ServiceRequest", true);
     },
     'AMAZON.NoIntent': function() {
-        this.handler.state = APP_STATES.START;
-        this.emitWithState("NewSession", true);
+        this.emit('SessionEndedRequest');
+    },
+    'AMAZON.HelpIntent': function () {
+        this.attributes.speechOutput = 'Du kannst Errorcodes abfragen und dir Hilfe holen.';
+        this.attributes.repromptSpeech = 'Du kannst beispielsweise sagen „Was bedeutet Fehlercode 529 3". Probiere es aus!';
+        this.emit(':ask', this.attributes.speechOutput, this.attributes.repromptSpeech);
+    },
+    'AMAZON.StopIntent': function () {
+        this.emit('SessionEndedRequest');
+    },
+    'AMAZON.CancelIntent': function () {
+        this.emit('SessionEndedRequest');
+    },
+    'SessionEndedRequest': function () {
+        this.emit(':tell', "Auf Wiedersehen!");
     },
     'Unhandled': function () {
-        const speechOutput = "Das hab ich nicht verstanden, bitte nochmal!";
-        this.emit(":ask", speechOutput, speechOutput);
+        var output = "Das hab ich nicht verstanden, bitte nochmal!";
+        this.emit(":ask", output, output);
     }
 });
 
