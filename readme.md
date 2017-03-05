@@ -6,7 +6,7 @@ PALFINGER's current main business model is to sell its equipment to customers. B
 
 ## Palfinger Assistance Hub
 
-![pal techstack](techstack.png)
+![pal techstack](alexa/techstack.png)
 
 ## License
 
